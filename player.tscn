@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqt4t1hvcvmri"]
+[gd_scene load_steps=7 format=3 uid="uid://cqt4t1hvcvmri"]
 
 [ext_resource type="Texture2D" uid="uid://v7o05eleq2ku" path="res://art/playerGrey_up1.png" id="1_hqtel"]
 [ext_resource type="Texture2D" uid="uid://b3ifekcbrjyhy" path="res://art/playerGrey_up2.png" id="2_sweqy"]
@@ -30,10 +30,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hqtel"]
+radius = 24.0
+height = 66.0
+
 [node name="Player" type="Area2D"]
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_dw050")
 animation = &"walk"
-frame_progress = 0.11358124
+frame_progress = 0.5553185
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_hqtel")
